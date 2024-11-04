@@ -1,3 +1,69 @@
+TCS CodeVita Syllabus
+
+ 
+
+Coding problems from the following topics, in round 1: C Programming
+
+●     Data types and Ranges
+
+●     Conditional Statements
+
+●     Operators
+
+●     Arrays
+
+●     Arrays Manipulations
+
+●     String Manipulations
+
+●     Recursion
+
+●     Linked Lists it's Operations
+
+●     Stack amd it's Operations
+
+●     Queue it's Operations
+
+●     Trees
+
+●     Graphs
+
+●     Mapping Concepts
+
+●     Time Complexity and Space Complexity
+
+●     Greedy Algorithms
+
+●     Back Tracking
+
+●     Dynamic Programming
+
+●     Exception Handling
+
+●     Frame  works
+
+ 
+
+All the students will get 8 different programming languages to opt between:
+
+●       C
+
+●       C++
+
+●       C#
+
+●       Java
+
+●       Ruby
+
+●       Perl
+
+●       PHP
+
+●       Python
+
+
+
 Data Types(Java):
 Primitive
 1.number datatype
