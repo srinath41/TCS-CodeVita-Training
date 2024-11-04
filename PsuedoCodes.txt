@@ -1,0 +1,10 @@
+Psuedo Codes:
+
+QUESTIONS:
+
+1: swap the given two numbers with out using 3rd variable.
+a=a+b
+b=a-b
+a=a-b
+
+2: Areas of Conics

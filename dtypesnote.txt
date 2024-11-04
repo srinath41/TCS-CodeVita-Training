@@ -1,0 +1,49 @@
+Data Types(Java):
+Primitive
+1.number datatype
+2.non number datatype
+
+In number datatype:
+
+byte   (1byte = 8bits)
+short  (2bytes= 16bits)
+int    (4bytes= 32bits)
+long   (8bytes= 64bits)
+float  (4bytes= 32bits)
+double (8bytes= 64bits)
+
+In non number:
+
+Boolean 1bit(1,0)
+Charecter 2bytes= 16bits
+
+
+The size of the byte: 1 bytes = 8 bits
+Range of Byte: -128 to 127
+The size of the short: 2 bytes = 16 bits
+Range of Short: -32768 to 32767
+The size of the integer: 4 bytes = 32 bits
+Range of Integer: -2147483648 to 2147483647
+The size of the long: 8 bytes = 64 bits
+Range of Long: -9223372036854775808 to 9223372036854775807
+The size of the float: 4 bytes = 32 bits
+Range of Float: 1.4E-45 to 3.4028235E38
+The size of the double: 8 bytes = 64 bits
+Range of Double: 4.9E-324 to 1.7976931348623157E308
+The size of the char: 2 bytes = 16 bits
+Range of Character: 0 to 65535
+
+
+IN C language:
+
+signed char 1byte    (-128 - +127)
+unsigned             (0    -  125)
+unsigned int         
+long 4bytes
+float                (1.2e-38  - 3.4e+38)
+double               (2.3e-308 - 1.7e+308)
+long double          (1.1e-4932-  3.4e+4932)
+
+
+
+
