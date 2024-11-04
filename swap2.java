@@ -12,5 +12,6 @@ public class swap2 {
         a=a-b;
         System.out.println("a= "+a);
         System.out.println("b= "+b);
+        sc.close();
     }
 }

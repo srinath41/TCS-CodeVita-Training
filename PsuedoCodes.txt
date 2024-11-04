@@ -8,3 +8,26 @@ b=a-b
 a=a-b
 
 2: Areas of Conics
+
+Triangle: 0.5*B*H
+Square: S*S
+Circle: 3.14*R*R
+Rectangle:  L*B
+Rhombus:   0.5*D1*D2
+
+3: Temparature conversion
+
+celsius to fahrenheit
+(C * 9/5) + 32
+
+fahrenheit to celsius
+(F - 32) * 5/9
+
+4: arithmetic operations:
+a+b
+a-b
+a*b
+a/b
+a%b
+
+
