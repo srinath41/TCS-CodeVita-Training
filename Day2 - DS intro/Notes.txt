@@ -10,6 +10,9 @@ position in the sequence.
 
 operations on Linked List:
 1. Insertion: Inserting a new node at the beginning or end of the list.
+ insert at begin.
+ insert at position.
+ insert at end.
 2. Deletion: Deleting a node from the list.
 3. Search: Searching for a node with a specific value.
 4. Traversal: Traversing the list to access all nodes.
@@ -18,3 +21,75 @@ operations on Linked List:
 7. Merging: Merging two linked lists into one.
 8. Splitting: Splitting a linked list into two or more lists.
 9. Counting: Counting the number of nodes in the list.
+
+code for implementing Linked List:
+
+In C:
+Struct Node{
+    int data;
+    struct Node* next;
+};
+
+In Java:
+public class Node {
+    int data;
+    Node next;
+}
+
+diagramatic representation of Linked List:
+A -> B -> C -> D -> E
+A -> next = B
+and so on...
+E  -> next = NULL
+
+Psuedo code for LinkedList:
+inialize start=null
+l=start
+read input
+while l!=null
+if l.data==input
+return l
+else
+l=l.next
+
+
+
+write java code implementing Linked List with creation, insertion:
+class  Node {
+    int data;
+    Node next;
+    }
+    class LinkedList {
+        Node head;
+        public void insert(int data) {
+            Node newNode = new Node();
+            newNode.data = data;
+            newNode.next = null;
+            if (head == null) {
+                head = newNode;
+                } else {
+                    Node lastNode = head;
+                    while (lastNode.next != null) {
+                        lastNode = lastNode.next;
+                        }
+                        lastNode.next = newNode;
+                        }
+                        }
+                        }
+                        public void printList() {
+                            Node currentNode = head;
+                            while (currentNode != null) {
+                                System.out.print(currentNode.data + " ");
+                                currentNode = currentNode.next;
+                                }
+                                }
+                                public static void main(String[] args) {
+                                    LinkedList list = new LinkedList();
+                                    list.insert(1);
+                                    list.insert(2);
+                                    list.insert(3);
+                                    list.insert(4);
+                                    list.insert(5);
+                                    list.printList();
+                                    }
+                                    }
