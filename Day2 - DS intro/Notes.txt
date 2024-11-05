@@ -1,0 +1,20 @@
+Data Structures.
+
+Linked List:
+A linked list is a linear collection of data elements whose order is not given by their physical placement in
+memory. Instead, each element points to the next. It is a data structure consisting of a collection
+of nodes which together represent a sequence.
+In a linked list, each node contains a value and a reference (or link) to the next
+node in the sequence. This structure allows for efficient insertion or removal of elements from any
+position in the sequence.
+
+operations on Linked List:
+1. Insertion: Inserting a new node at the beginning or end of the list.
+2. Deletion: Deleting a node from the list.
+3. Search: Searching for a node with a specific value.
+4. Traversal: Traversing the list to access all nodes.
+5. Sorting: Sorting the list in ascending or descending order.
+6. Reversing: Reversing the order of the list.
+7. Merging: Merging two linked lists into one.
+8. Splitting: Splitting a linked list into two or more lists.
+9. Counting: Counting the number of nodes in the list.
