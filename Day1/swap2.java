@@ -7,6 +7,13 @@ public class swap2 {
         int a=sc.nextInt();
         System.out.println("Enter B:");
         int b=sc.nextInt();
+        //using 3rd variable
+        // int c;
+        // c=a;
+        // a=b;
+        // b=c;
+
+        //without using 3rd variable
         a=a+b;
         b=a-b;
         a=a-b;
