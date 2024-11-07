@@ -52,6 +52,76 @@ public class LinkedList {
     }
   }
 
+  public void deleteBegin() {
+    head = head.next;
+  }
+
+  public void deleteEnd() {
+    if (head.next == null) {
+      head = null;
+      return;
+    }
+    Node t = head;
+    while (t.next.next != null) {
+      t = t.next;
+    }
+    t.next = null;
+  }
+
+  public void deleteAt(int position) {
+    Node currentNode = head;
+    int pos = 0;
+    while (currentNode != null && pos < position - 1) {
+      currentNode = currentNode.next;
+      pos++;
+    }
+    currentNode.next = currentNode.next.next;
+  }
+
+  public void search(int data) {
+    Node t = head;
+    int i = 0;
+    while (t != null) {
+      if (t.data == data) {
+        System.out.println(
+          "Element is present in the list at  position : " + i
+        );
+        return;
+      }
+      t = t.next;
+      i++;
+    }
+    System.out.println("Element is not present in the list");
+  }
+
+  public void reverse() {
+    Node prev = null;
+    Node t = head;
+    while (t != null) {
+      Node next = t.next;
+      t.next = prev;
+      prev = t;
+      t = next;
+    }
+    head = prev;
+  }
+
+  public void sort() {
+    Node t = head;
+    while (t != null) {
+      Node i = t;
+      while (i.next != null) {
+        if (t.data > i.next.data) {
+          int temp = t.data;
+          t.data = i.next.data;
+          i.next.data = temp;
+        }
+        i = i.next;
+      }
+      t = t.next;
+    }
+  }
+
   public void printList() {
     Node currentNode = head;
     while (currentNode != null) {
@@ -70,6 +140,16 @@ public class LinkedList {
     list.insertBegin(0);
     list.insertAt(6, 3);
     list.insertAt(7, 2);
+    list.deleteBegin();
+    list.deleteEnd();
+    list.deleteAt(3);
+    list.search(4);
+    list.printList();
+    System.out.println();
+    list.reverse();
+    list.printList();
+    System.out.println();
+    list.sort();
     list.printList();
   }
 }

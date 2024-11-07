@@ -14,6 +14,9 @@ operations on Linked List:
  insert at position.
  insert at end.
 2. Deletion: Deleting a node from the list.
+ delete at begin.
+ delete at position.
+ delete at end.
 3. Search: Searching for a node with a specific value.
 4. Traversal: Traversing the list to access all nodes.
 5. Sorting: Sorting the list in ascending or descending order.
