@@ -39,3 +39,16 @@ A previous contains  null and A  next contains B.
 A is the previous node of B and B is the next node of A.
 E next  contains null and E previous contains D.
 
+operations in LinkedList:
+1) Insertion
+ insertbegin
+ insertend
+ insertAt
+2) deletion
+deletebegin
+deleteend
+deleteAt
+3) search
+4) display
+5) reverse
+6) sort
