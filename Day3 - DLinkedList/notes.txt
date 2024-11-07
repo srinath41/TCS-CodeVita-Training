@@ -1,0 +1,41 @@
+Advantages of linked list:
+-LinkedList is a dynamic structure.
+-We can effectivly use memeory
+-self referenced structure.
+-insertion can be done at any position.
+-deletion can be done at any position.
+
+Disadvantages of linked list:
+-Searching is a time consuming process.
+-Insertion and deletion is a time consuming process.
+-Extra memory is required for storing the address of each node.
+-It is difficult to implement a linked list in a multi-threaded environment.
+
+
+Double LinkedList Notes:
+It is a linear data structure in which each element is a separate object, known as a node.
+In Double LinkedList, List can be divided into 3 parts.
+1) Previous field used store address of  previous node.
+2) Data field used to store data.
+3) Next field used to store address of next node.
+
+Data flow can both  forward and backward.
+
+class Node{
+    int data;
+    Node next;
+    Node prev;
+    public void  Node(int data){
+        this.data=data;
+        this.next=null;
+        this.prev=null;
+    }
+}
+
+Diagramatic representation of Double LinkedList:
+A<->B<->C<->D<->E
+A is the head node and E is the tail node.
+A previous contains  null and A  next contains B.
+A is the previous node of B and B is the next node of A.
+E next  contains null and E previous contains D.
+
