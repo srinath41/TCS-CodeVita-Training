@@ -1,0 +1,32 @@
+Circular LinkedList:
+A linked list is a linear collection of data elements whose order is not given by their physical placement in
+memory. Instead, each element points to the next. It is a data structure consisting of a collection
+of nodes which together represent a sequence. In a linked list, each element is a separate object,
+known as a node (or link).
+Each node contains two items: the data and a reference (or link) to the next node in the sequence.
+
+data field : stores the data of the node
+next field : stores the reference to the next node in the sequence
+
+In Circular LinkedList For last node, next field will point to the first node.
+
+Diagramatic representation of Circular LinkedList:
+A->B->C->D->A
+
+operations on CircularLinkedList:
+1. Insertion
+ insertbegin
+ insertend
+ insertAt
+2. Deletion
+deletebegin
+deleteend
+deleteAt
+3. Traversal
+4. Search
+5. Length
+6. Display
+7. Reverse
+8. Sort
+9. Reverse Sort
+10. Find middle element
