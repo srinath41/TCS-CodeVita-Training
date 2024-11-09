@@ -2,26 +2,29 @@ class Node {
 
   int data;
   Node next;
+  Node prev;
 
   Node(int data) {
     this.data = data;
   }
 }
 
-public class CircularLinkedList {
+public class CDLinkedList {
 
   Node head;
   Node tail;
-  int length = 0; // Length counter to track the number of nodes
+  int length = 0;
 
   // Insert at the beginning
   public void insertBegin(int data) {
     Node newNode = new Node(data);
     if (head == null) {
       head = tail = newNode;
-      newNode.next = head;
+      newNode.next = newNode.prev = newNode; // Point to itself to maintain circularity
     } else {
       newNode.next = head;
+      newNode.prev = tail;
+      head.prev = newNode;
       tail.next = newNode;
       head = newNode;
     }
@@ -33,10 +36,12 @@ public class CircularLinkedList {
     Node newNode = new Node(data);
     if (head == null) {
       head = tail = newNode;
-      newNode.next = head;
+      newNode.next = newNode.prev = newNode; // Point to itself to maintain circularity
     } else {
-      tail.next = newNode;
       newNode.next = head;
+      newNode.prev = tail;
+      tail.next = newNode;
+      head.prev = newNode;
       tail = newNode;
     }
     length++;
@@ -60,6 +65,8 @@ public class CircularLinkedList {
         current = current.next;
       }
       newNode.next = current.next;
+      newNode.prev = current;
+      current.next.prev = newNode;
       current.next = newNode;
       length++;
     }
@@ -75,6 +82,7 @@ public class CircularLinkedList {
       head = tail = null;
     } else {
       head = head.next;
+      head.prev = tail;
       tail.next = head;
     }
     length--;
@@ -89,12 +97,9 @@ public class CircularLinkedList {
     if (head == tail) {
       head = tail = null;
     } else {
-      Node current = head;
-      while (current.next != tail) {
-        current = current.next;
-      }
-      current.next = head;
-      tail = current;
+      tail = tail.prev;
+      tail.next = head;
+      head.prev = tail;
     }
     length--;
   }
@@ -107,17 +112,15 @@ public class CircularLinkedList {
     }
     if (position == 0) {
       deleteBegin();
+    } else if (position == length - 1) {
+      deleteEnd();
     } else {
       Node current = head;
-      for (int i = 0; i < position - 1; i++) {
+      for (int i = 0; i < position; i++) {
         current = current.next;
       }
-      current.next = current.next.next;
-
-      // Update tail if the last element is deleted
-      if (current.next == head) {
-        tail = current;
-      }
+      current.prev.next = current.next;
+      current.next.prev = current.prev;
       length--;
     }
   }
@@ -142,25 +145,23 @@ public class CircularLinkedList {
     System.out.println("Element not found in the list");
   }
 
-  // Reverse the circular linked list
+  // Reverse the circular doubly linked list
   public void reverse() {
     if (head == null || head == tail) return;
 
-    Node prev = tail;
     Node current = head;
-    Node next;
-
+    Node temp;
     do {
-      next = current.next;
-      current.next = prev;
-      prev = current;
-      current = next;
+      temp = current.next;
+      current.next = current.prev;
+      current.prev = temp;
+      current = temp;
     } while (current != head);
 
-    // Swap head and tail, and restore circularity
-    tail = head;
-    head = prev;
-    tail.next = head;
+    // Swap head and tail
+    temp = head;
+    head = tail;
+    tail = temp;
   }
 
   // Sort the list in ascending order
@@ -170,7 +171,6 @@ public class CircularLinkedList {
     for (Node current = head; current.next != head; current = current.next) {
       for (Node index = current.next; index != head; index = index.next) {
         if (current.data > index.data) {
-          // Swap data
           int temp = current.data;
           current.data = index.data;
           index.data = temp;
@@ -179,7 +179,7 @@ public class CircularLinkedList {
     }
   }
 
-  // Display the circular linked list
+  // Display the circular doubly linked list
   public void display() {
     if (head == null) {
       System.out.println("List is empty");
@@ -194,24 +194,24 @@ public class CircularLinkedList {
   }
 
   public static void main(String[] args) {
-    CircularLinkedList cll = new CircularLinkedList();
-    cll.insertBegin(2);
-    cll.insertBegin(1);
-    cll.insertEnd(3);
-    cll.insertAt(4, 3);
-    cll.display(); // Should display 1 2 3 4
+    CDLinkedList cdll = new CDLinkedList();
+    cdll.insertBegin(2);
+    cdll.insertBegin(1);
+    cdll.insertEnd(3);
+    cdll.insertAt(4, 3);
+    cdll.display(); // Should display 1 2 3 4
 
-    cll.reverse();
-    cll.display(); // Should display 4 3 2 1 (reversed order)
+    cdll.reverse();
+    cdll.display(); // Should display 4 3 2 1 (reversed order)
 
-    cll.search(3); // Should print "Element found at index 1" (or the correct index)
+    cdll.search(3); // Should print "Element found at index 1" (or the correct index)
 
-    cll.deleteAt(1);
-    cll.display(); // Should display 4 2 1 after deletion at index 1
+    cdll.deleteAt(1);
+    cdll.display(); // Should display 4 2 1 after deletion at index 1
 
-    cll.sort();
-    cll.display(); // Should display 1 2 4 in ascending order
+    cdll.sort();
+    cdll.display(); // Should display 1 2 4 in ascending order
 
-    System.out.println("Length of list: " + cll.length); // Should print the length of the list
+    System.out.println("Length of list: " + cdll.length); // Should print the length of the list
   }
 }
