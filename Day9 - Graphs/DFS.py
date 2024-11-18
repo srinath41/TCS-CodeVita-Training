@@ -13,3 +13,22 @@ def dfs(vis,s,adj):
         if vis[i]==False:
             dfs(vis,i,adj)
 dfs(visited,s,adj)
+
+
+'''
+def dfs(node, parent):
+        visited[node] = True
+        for neighbor in adj[node]:
+            if not visited[neighbor]:  # If the neighbor is not visited
+                if dfs(neighbor, node):  # Recursive call
+                    return True
+            elif neighbor != parent:  # If the neighbor is visited and not the parent
+                return True
+        return False
+
+    for i in range(n):  # Handle disconnected components
+        if not visited[i]:
+            if dfs(i, -1):  # Start DFS from this node
+                return True
+    return False
+'''
